@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
  
 class MyMath {
-   public static int add(int a, int b) {
+   public static int add(int a, int b){
        return a + b;
    }
 }
@@ -27,7 +27,7 @@ public class CallableTest {
                    executor.submit(
 		        new Callable<Integer>() {
 			    public Integer call() {
-			        return MyMath.add(x, y);
+						return MyMath.add(x, y);
 			    }
 			});
 	
