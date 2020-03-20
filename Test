@@ -1,0 +1,107 @@
+package one;
+
+import java.io.UnsupportedEncodingException;
+import java.lang.instrument.Instrumentation;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+class PankajTest{
+	
+	int id ;
+	Date date = new Date();
+	Date date1 = new Date();
+	Date date2 = new Date();
+	Date date3 = new Date();
+	Date date4 = new Date();
+	Date date5 = new Date();
+	Date date6 = new Date();
+	Date date7 = new Date();
+	Date date8 = new Date();
+	Date date9 = new Date();
+	Date date10 = new Date();
+	Map map = new HashMap(500);
+	Map map1 = new HashMap(500);
+	Map map2= new HashMap(500);
+	Map map3 = new HashMap(500);
+	Map map4 = new HashMap(500);
+	Map map5 = new HashMap(500);
+	
+	
+	PankajTest(int id){
+		this.id = id;
+	}
+}
+
+public class Test {
+
+	public static void main(String[] args) throws UnsupportedEncodingException, InterruptedException {
+
+		Map<Integer, PankajTest> myMap = new HashMap<>(); 
+		Map<Integer, PankajTest> myMap1 = new HashMap<>();
+		Map<Integer, PankajTest> myMap2 = new HashMap<>();
+		Map<Integer, PankajTest> myMap3 = new HashMap<>();
+		Map<Integer, PankajTest> myMap4 = new HashMap<>();
+		
+		Thread.currentThread().setName("Pankaj Thread----------");
+		Thread.currentThread().sleep(10000);
+		System.out.println("Strted");
+		
+		System.out.println("Map1");
+		
+		for(int i=1; i<=3050000 ; i++) {
+			myMap1.put(i, new PankajTest(i));
+		}
+		System.out.println(myMap1.size());
+		Thread.currentThread().sleep(10000);
+		
+
+		System.out.println("Map2");
+		
+		for(int i=1; i<=3050000 ; i++) {
+			myMap2.put(i, new PankajTest(i));
+		}
+		System.out.println(myMap2.size());
+		Thread.currentThread().sleep(10000);
+
+		System.out.println("Map3");
+		
+		for(int i=1; i<=3050000 ; i++) {
+			myMap3.put(i, new PankajTest(i));
+		}
+		System.out.println(myMap3.size());
+		Thread.currentThread().sleep(10000);
+
+		System.out.println("Map4");
+		
+		for(int i=1; i<=3050000 ; i++) {
+			myMap4.put(i, new PankajTest(i));
+		}
+		System.out.println(myMap4.size());
+		Thread.currentThread().sleep(10000);
+		
+
+		System.out.println("Map");
+		
+		for(int i=1; i<=100000 ; i++) {
+			if (i==30)
+				myMap1 = null;
+			if (i==60)
+				myMap2 = null;
+			if (i==90)
+				myMap3 = null;
+			if (i==120)
+				myMap4 = null;
+			
+			myMap.put(i, new PankajTest(i));
+			 System.out.println(myMap.size());
+			Thread.currentThread().sleep(1000);
+		}
+		
+       System.out.println(myMap.size());
+       System.out.println(myMap);
+        
+	}
+	
+}
