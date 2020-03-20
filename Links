@@ -1,0 +1,80 @@
+---------------------
+OPP Solid Principles
+---------------------
+https://javarevisited.blogspot.com/2018/07/10-object-oriented-design-principles.html
+https://howtodoinjava.com/best-practices/5-class-design-principles-solid-in-java/
+https://javarevisited.blogspot.com/2015/06/difference-between-inheritance-and-Composition-in-Java-OOP.html
+
+=====================
+Concurrent
+---------------------
+50 IQ-https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-questions-answers.html
+https://javarevisited.blogspot.com/2018/07/java-multi-threading-interview-questions-answers-from-investment-banks.html
+https://javarevisited.blogspot.com/2013/02/concurrenthashmap-in-java-example-tutorial-working.html
+https://javarevisited.blogspot.com/2017/08/top-10-java-concurrenthashmap-interview.html
+https://javarevisited.blogspot.com/2013/02/concurrent-collections-from-jdk-56-java-example-tutorial.html
+https://howtodoinjava.com/java/multi-threading/throttling-task-submission-rate-using-threadpoolexecutor-and-semaphore/
+Thread Local -https://javarevisited.blogspot.com/2012/05/how-to-use-threadlocal-in-java-benefits.html
+Locks - https://javarevisited.blogspot.com/2014/10/how-to-use-locks-in-multi-threaded-java-program-example.html
+	  - 
+	  
+
+reentrany loack - https://javarevisited.blogspot.com/2015/06/java-lock-and-condition-example-producer-consumer.html
+Executor service- https://www.baeldung.com/java-executor-service-tutorial
+Videos on Concurrency = https://www.youtube.com/watch?v=7VqWkc9o7RM&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=14
+=====================
+Core Java
+---------------------
+https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html
+
+
+==============================
+GC Interview Questions
+------------------------------
+https://javarevisited.blogspot.com/2011/04/garbage-collection-in-java.html -- working --old
+https://javarevisited.blogspot.com/2012/10/10-garbage-collection-interview-question-answer.html#axzz4pbqSY8Ua-- Remaining
+https://javarevisited.blogspot.com/2011/11/hotspot-jvm-options-java-examples.html
+
+===========
+Collection
+-----------
+
+https://javarevisited.blogspot.com/2011/11/collection-interview-questions-answers.html
+https://javarevisited.blogspot.com/2011/11/collection-interview-questions-answers.html#axzz4pbqSY8Ua
+
+============
+Tricky
+------------
+https://www.java67.com/2012/09/top-10-tricky-java-interview-questions-answers.html -- Remaining
+
+
+==============================
+Coding Interview Questions
+------------------------------
+https://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html-- Remaining
+https://javarevisited.blogspot.com/2011/06/top-programming-interview-questions.html
+
+
+==============================
+Other Java Feature
+------------------------------
+https://www.java67.com/2016/03/top-21-java-inheritance-interview-Questions-Answer-Programming.html
+https://javarevisited.blogspot.com/2016/09/21-java-final-modifier-keyword-interview-questions-answers.html#axzz4pYJxoTvh
+https://www.java67.com/2016/01/main-method-interview-questions-in-java-answers.html
+https://www.java67.com/2015/08/top-10-method-overloading-overriding-interview-questions-answers-java.html
+https://www.java67.com/2013/07/15-java-enum-interview-questions-amswers-for-experienced-programmers.html
+
+https://www.java67.com/2017/08/top-17-sql-and-unix-interview-questions.html
+
+Design patterns microservices : 
+https://dzone.com/articles/design-patterns-for-microservices
+
+My questions : 
+
+1. When do we distinguish how to choose between Strong reference and Soft reference ? 
+2. How is weak reference useful ?
+3. Difference between iterator and enumeration, arraylits / vector, arraylist / copyonwritearraylist, arraylist/ linkedlist..
+
+https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries/
+https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml
+
