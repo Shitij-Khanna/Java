@@ -37,6 +37,7 @@ class BST {
 		return node;
 	}
 
+	// Method to delete node from binary search tree
 	// Takes root as input, deletes the Node and updates the root, and returns root
 	public Node delete(Node root, int val) {
 		if (root == null) {
@@ -89,6 +90,36 @@ class BST {
 
 		return temp;
 	}
+
+	public void inOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+
+		inOrder(root.left);
+		System.out.print(root.data + " ");
+		inOrder(root.right);
+	}
+
+	public void preOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+
+		System.out.print(root.data + " ");
+		preOrder(root.left);
+		preOrder(root.right);
+	}
+
+	public void postOrder(Node root) {
+		if(root == null) {
+		      return;
+		    }
+		    
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.print(root.data+ " ");		
+	}
 }
 
 public class BSTApp {
@@ -114,12 +145,35 @@ public class BSTApp {
 		// inserted/deleted value, and that is why root is assigned to whatever is
 		// returned from the method
 
+		// Traverse the tree and print elements in sorted order using Inorder depth
+		// first algo
+		// Left --> Root --> Right
+		System.out.println("Tree sorted by InOrder algo:");
+		bst.inOrder(root);
+		System.out.println("");
+
+		// Traverse the tree and print elements in PRE order using PREorder depth first
+		// algo
+
+		// Root --> Left --> Right
+		System.out.println("Tree sorted by PreOrder algo:");
+		bst.preOrder(root);
+		System.out.println("");
+		
+		
+		// Traverse the tree and print elements in POST order using POSTorder depth first
+				// algo
+		// Left --> Right --> Root
+		System.out.println("Tree sorted by postOrder algo:");
+		bst.postOrder(root);
+		System.out.println("");
+
 		// Now, we will look how to delete Node from BST
-		System.out.println(bst);
 		root = bst.delete(root, 14);
 		root = bst.delete(root, 3);
 
-		System.out.println(bst);
+		System.out.println("After deletion of elements");
+		bst.inOrder(root);
 	}
 }
 
