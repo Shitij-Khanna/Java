@@ -27,7 +27,6 @@ public class FP03FunctionalInterfaces2 {
 
 		System.out.println("--------------------------------------------");
 		Predicate<Integer> isEvenPredicate = (Integer x) -> x % 2 == 0;
-
 		Function<Integer, Integer> squareFunction = x -> x * x;
 		
 		Function<Integer, String> stringOutpuFunction = x -> x + " ";
