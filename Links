@@ -1,5 +1,5 @@
 ---------------------
-OPP Solid Principles
+OOP Solid Principles
 ---------------------
 https://javarevisited.blogspot.com/2018/07/10-object-oriented-design-principles.html
 https://howtodoinjava.com/best-practices/5-class-design-principles-solid-in-java/
@@ -12,8 +12,11 @@ Concurrent
 https://javarevisited.blogspot.com/2018/07/java-multi-threading-interview-questions-answers-from-investment-banks.html
 https://javarevisited.blogspot.com/2013/02/concurrenthashmap-in-java-example-tutorial-working.html
 https://www.java67.com/2014/01/10-points-about-thread-and-javalangthread-in-java.html
+<<<<<<< HEAD
 https://javarevisited.blogspot.com/2013/03/reentrantlock-example-in-java-synchronized-difference-vs-lock.html  -- Reentrant lock
 https://www.java67.com/2012/08/what-is-thread-and-runnable-in-java.html
+=======
+>>>>>>> 6e9f126fb9d3ff9d171a14aceee69d460f12c80c
 https://javarevisited.blogspot.com/2017/08/top-10-java-concurrenthashmap-interview.html
 https://javarevisited.blogspot.com/2013/02/concurrent-collections-from-jdk-56-java-example-tutorial.html
 https://howtodoinjava.com/java/multi-threading/throttling-task-submission-rate-using-threadpoolexecutor-and-semaphore/
@@ -101,6 +104,7 @@ https://www.youtube.com/watch?v=SneVX9O6RC0
 https://www.sqlshack.com/query-optimization-techniques-in-sql-server-the-basics/
     where to use inner query and wher to use join
     where to use exist and where to use IN
+<<<<<<< HEAD
 
 	
 New year chaos :
