@@ -1,0 +1,183 @@
+Object Oriented (OO) design concepts:
+
+What are the key
+characteristics of
+an OO language
+like Java?
+
+A true object oriented language should support the following 3 characteristics:
+􀂙 Encapsulation (aka information hiding): implements information hiding and modularity
+(abstraction).
+
+Polymorphism: The same message sent to different objects, results in behavior that is dependent
+on the nature of the object receiving the message.
+
+Inheritance: Encourages code reuse and code organization by defining the new class based on the
+existing class.
+
+What is dynamic binding?
+Dynamic binding (aka late binding): The dynamic binding is used to implement polymorphism. Objects
+could come from local process or from across the network from a remote process. We should be able to
+send messages to objects without having to know their types at the time of writing the code. Dynamic
+binding provides maximum flexibility at the execution time. Usually dynamic binding or late binding takes
+a small performance hit.
+
+Let us take an example to illustrate dynamic binding through polymorphic behavior:
+Say you have a method in Java
+
+void draw(Shape s) {
+s.erase();
+// ...
+s.draw();
+}
+
+The above method will talk to any shape, so it is independent of the specific type of object it is
+erasing and drawing. Now let us look at some other program, which is making use of this
+draw(Shape s) method:
+
+Circle cir = new Circle();
+Square sq = new Square();
+draw(cir);
+draw(sq);
+
+So the interesting thing is that the method call to draw(Shape s) will cause different code to be
+executed. So you send a message to an object even though you don’t know what specific type it is
+and the right thing happens. This is called dynamic binding, which gives you polymorphic behavior.
+------------------------------------------------------------------------------------------------------------------------------------
+
+How will you
+decide whether to
+use an interface or
+an abstract class?
+
+Abstract Class: Often in a design, you want the base class to present only an interface for its
+derived classes. That is, you don’t want anyone to actually create an object of the base class, only
+to upcast to it so that its interface can be used. This is accomplished by making that class abstract
+using the abstract key word. If anyone tries to make an object of an abstract class, the compiler
+prevents them. This is a tool to enforce a particular design.
+
+Interface: The interface key word takes the concept of an abstract class one step further by
+preventing any function definitions at all. An interface is a very useful and commonly used tool, as it
+provides the perfect separation of interface and implementation. In addition, you can combine many
+interfaces together, if you wish. (You cannot inherit from more than one regular class or abstract
+class.)
+
+Now the design decision…
+When to use an Abstract Class: Abstract classes are excellent candidates inside of application.
+frameworks. Abstract classes let you define some default behavior and force subclasses to provide
+any specific behavior.
+
+When to use an Interface: If you need to change your design frequently, I prefer using interface to
+abstract. For example, the strategy pattern lets you swap new algorithms and processes into your
+program without altering the objects that use them.
+
+Another justification of interfaces is that they solved the ‘diamond problem’ of traditional multiple
+inheritance. Java does not support multiple inheritance. Java only supports multiple interface
+inheritance. Interface will solve all the ambiguities caused by this ‘diamond problem'.
+
+Interface inheritance vs. Implementation inheritance: Prefer interface inheritance to implementation
+inheritance because it promotes the design concept of coding to an interface and reduces
+coupling. Interface inheritance can achieve code reuse with the help of object composition.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Why abstraction is
+important in Object
+Oriented
+programming?
+
+The software you develop should optimally cater for the current requirements and problems and also
+should be flexible enough to easily handle future changes.
+
+Abstraction is an important OO concept. The ability for a program to ignore some aspects of the
+information that it is manipulating, i.e. Ability to focus on the essential. 
+
+Each object in the system serves
+as a model of an abstract "actor" that can perform work, report on and change its state, and
+"communicate" with other objects in the system, without revealing how these features are implemented.
+Abstraction is the process where ideas are distanced from the concrete implementation of the objects.
+The concrete implementation will change but the abstract layer will remain the same.
+
+Let us look at an analogy:
+When you drive your car you do not have to be concerned with the exact internal working of your car
+(unless you are a mechanic). What you are concerned with is interacting with your car via its interfaces
+like steering wheel, brake pedal, accelerator pedal etc. Over the years a car’s engine has improved a lot
+but its basic interface has not changed (i.e. you still use steering wheel, brake pedal, accelerator pedal
+etc to interact with your car). This means that the implementation has changed over the years but the
+interface remains the same. Hence the knowledge you have of your car is abstract.
+------------------------------------------------------------------------------------------------------------------------------------
+
+Explain black-box
+reuse and whitebox
+reuse? Should
+you favor
+Inheritance (whitebox
+reuse) or
+aggregation
+(black-box reuse)?
+
+Black-box reuse is when a class uses another class without knowing the internal contents of it. The
+black-box reuses are:
+
+􀂙 Dependency is the weakest type of black-box reuse.
+
+􀂙 Association is when one object knows about or has a relationship with the other objects.
+
+􀂙 Aggregation is the whole part relationship where one object contains one or more of the other
+objects
+
+􀂙 Composition is a stronger whole part relationship
+
+White-box reuse is when a class knows internal contents of another class. E.g. inheritance is used to
+modify implementation for reusability : 
+
+Composition (Black-box reuse) 
+Defined dynamically or at runtime via object
+references. Since only interfaces are used, it has
+the advantage of maintaining the integrity (i.e.
+encapsulation).
+
+Inheritance (White-box reuse)
+Inheritance is defined statically or at compile time.
+Inheritance allows an easy way to modify
+implementation for reusability.
+
+Composition (Black-box reuse) 
+Disadvantage of aggregation is that it increases
+the number of objects and relationships.
+
+Inheritance (White-box reuse)
+A disadvantage of inheritance is that it breaks
+encapsulation, which implies implementation
+dependency. This means when you want to carry
+out the redesign where the super class (i.e. parent
+class) has to be modified or replaced, which is
+more likely to affect the subclasses as well. In
+general it will affect the whole inheritance
+hierarchy.
+Verdict: So the tendency is to favor composition
+over inheritance.
+
+------------------------------------------------------------------------------------------------------------------------------------
+What is your
+understanding on
+Aspect Oriented
+Programming
+(AOP)?
+
+Aspect-Oriented Programming (AOP) complements OO programming by allowing developers to
+dynamically modify the static OO model to create a system that can grow to meet new requirements.
+
+AOP allows us to dynamically modify our static model to include the code required to fulfill the secondary
+requirements (like auditing, logging, security, exception handling etc) without having to modify the
+original static model.
+(in fact, we don't even need to have the original code). Better still, we can often keep
+this additional code in a single location rather than having to scatter it across the existing model, as we
+would have to if we were using OO on its own.
+For example A typical Web application will require a servlet to bind the HTTP request to an object and
+then passes to the business handler object to be processed and finally return the response back to the
+user. So initially only a minimum amount of code is required. But once you start adding all the other
+additional secondary requirements (aka crosscutting concerns) like logging, auditing, security,
+exception-handling etc the code will inflate to 2-4 times its original size. This is where AOP can help.
+
+

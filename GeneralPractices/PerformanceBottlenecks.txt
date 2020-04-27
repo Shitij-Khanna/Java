@@ -1,0 +1,60 @@
+Java/J2EE design related performance bottlenecks. 
+
+Application design is one of the most important
+considerations for performance. A well-designed application will not only avoid many performance pitfalls but
+will also be easier to maintain and modify during the performance-testing phase of the project.
+
+􀂙 Use proper design patterns to minimize network trips (session facade, value object Refer etc Q83-
+Q87 in Enterprise section).
+
+􀂙 Minimize serialization cost by implementing session beans with remote interfaces and entity beans
+with local interfaces (applicable to EJB 2.x) or even the session beans can be implemented with local
+interfaces sharing the same JVM with the Web tier components. For EJB1.x some EJB containers can
+be configured to use pass-by-reference instead of pass-by-value (pass-by-value requires serialization)
+Refer Q69, Q82 in Enterprise section.
+
+􀂙 Use of multi-threading from a thread-pool (say 10 – 50 threads). Using a large number of threads
+adversely affects performance by consuming memory through thread stacks and CPU by context
+switching.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Database related performance bottlenecks.
+
+Use proper database indexes. Numeric indices are more efficient than character based indices. Minimize
+the number of columns in your composite keys. Performing a number of “INSERT” operations is more
+efficient when fewer columns are indexed and “SELECT” operations are more efficient when, adequately
+indexed based on columns frequently used in your “WHERE” clause. So it is a trade-off between
+“SELECT” and “INSERT” operations.
+
+Minimize use of composite keys or use fewer columns in your composite keys.
+
+Partition the database for performance based on the most frequently accessed data and least frequently
+accessed data.
+
+Identify and optimize your SQL queries causing performance problems (Refer Q97 in Enterprise
+section).
+
+􀂙 De-normalize your tables where necessary for performance (Refer Q98 in Enterprise section).
+
+Close database connections in your Java code in the finally block to avoid any “open cursors” problem
+(Refer Q45 in Enterprise section).
+
+Use optimistic concurrency as opposed to pessimistic concurrency where appropriate (Refer Q78 in
+Enterprise section).
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Application Server, JVM, Operating System, and/or hardware related performance bottlenecks.
+
+Application Server: Configure the application server for optimum performance (Refer Q88, Q123 in
+Enterprise section).
+
+Operating System: Check for any other processes clogging up the system resources, maximum
+number of processes it can support or connect, optimize operating system etc.
+
+Hardware: Insufficient memory, insufficient CPU, insufficient I/O, limitation of hardware configurations,
+network constraints like bandwidth, message rates etc.
+
+------------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,62 @@
+Thread safety and Transactional issues :
+
+An application program or a process can have multiple threads like multiple processes that can run on one
+computer. The multiple threads appear to be doing their work in parallel. When implemented on a multi-processor
+machine, they can actually work in parallel.
+
+Unlike processes, threads share the same address space. 
+which means they can read
+and write the same variables and data structures. So care should be taken to avoid one thread disturbing the work
+of another thread. Let us look at some of the common situations where care should be taken:
+
+A typical Servlet life cycle creates a single instance of each servlet and creates multiple threads to handle the
+service() method. The multi-threading aids efficiency but the servlet code must be coded in a thread
+safe manner. The shared resources (e.g. instance variable) should be appropriately synchronized or should
+only use variables in a read-only manner.
+
+The declaration of variables in JSP is not thread-safe, because the declared variables end up in the
+generated servlet as an instance variable, not within the body of the _jspservice() method. (Refer Q34 in
+Enterprise section).
+
+Some Java Collection classes like HashMap, ArrayList etc are not thread-safe. 
+
+Some of the Java core library classes are not thread safe. For e.g. java.util.SimpleDateFormat,
+java.util.Locale etc.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Transactional issues : 
+
+When a connection is created, it is in auto-commit mode. This means that each individual SQL statement is
+treated as a transaction and will be automatically committed immediately after it is executed. The way to
+allow two or more statements to be grouped into a transaction is to disable auto-commit mode. (Refer Q43 in
+Enterprise section). Disabling auto-commit mode can improve performance by minimizing number of times it
+accesses the database.
+Do not commit every small transaction because it will mean DB is accessed for every small txn, also do not keep too big transactions, parts of which should not be dependent on each other.
+
+A transaction is often described by ACID properties (Atomic, Consistent, Isolated and Durable). A
+distributed transaction is an ACID transaction between two or more independent transactional resources
+like two separate databases. For a transaction to commit successfully, all of the individual resources must
+commit successfully. If any of them are unsuccessful, the transaction must roll back all of the resources. A 2-
+phase commit is an approach for committing a distributed transaction in 2 phases. Refer Q43, Q73 in
+Enterprise section.
+
+Isolation levels provide a degree of control of the effects one transaction can have on another concurrent
+transaction. Concurrent effects are determined by the precise ways in which, a particular relational database
+handles locks and its drivers may handle these locks differently. Isolation levels are used to overcome
+transactional problems like lost update, uncommitted data (aka dirty reads), inconsistent data (aka. phantom
+update), and phantom insert. Higher isolation levels can adversely affect performance at the expense of data
+accuracy. Refer Q72 in Enterprise section.
+
+
+Isolation Level Lost Update Uncommitted Data Inconsistent Data Phantom Insert
+Read Uncommitted Prevented by DBMS Can happen Can happen Can happen
+Read Committed Prevented by DBMS Prevented by DBMS Can happen Can happen
+Repeatable Read Prevented by DBMS Prevented by DBMS Prevented by DBMS Can happen
+Serializable Prevented by DBMS Prevented by DBMS Prevented by DBMS Prevented by DBMS
+
+Decide between optimistic and pessimistic concurrency control.
+
+Evaluate a strategy to determine if the data is stale when using strategies to cache data.
+
+

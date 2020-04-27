@@ -1,0 +1,84 @@
+SQL Analyse Execution plan for performance :
+
+Write query : 
+Explain plan for 
+<actual query>
+
+Example :
+explain plan for
+select * from isorder io
+inner join paymentinstrumentinfo pii on pii.lineitemctnrid = io.uuid;
+
+
+select * from table(DBMS_XPLAN.DISPLAY);
+
+-----------------------------------------------------------------------------------------
+
+
+Select top N salaries from EMP table:
+Write a query to select top N salaries from the EMP table (or) Write a query to select maximum N salaries from the EMP table
+
+Answer: We can achieve this by using the DENSE_RANK Analytical function. In the below example we are getting the TOP 5 salaries from the EMP table. select * from 
+( select e.*, DENSE_RANK() 
+over (order by sal DESC) RN 
+from emp e ) where RN <=5
+
+select documentno, rank from 
+(
+select io.*, dense_rank() over
+      (order by grandtotalnetpricepcvalue desc) rank 
+      from isorder io
+)
+where rank<=2;
+
+-----------------------------------------------------------------------------------------
+
+Print even / odd numbered records : 
+
+select * from (select documentno, rownum rn from isorder order by documentno ) 
+where mod (rn, 2) = 0
+order by rn
+
+-----------------------------------------------------------------------------------------
+
+Write a query to select Nth maximum salary from EMP table (or) Write a query to find 2nd, 3rd max salary from EMP table (or) Write a query to find 10 highest salary (Or) Write a query to find 4th highest salary (without analytical function)
+Answer:
+
+select * from ( select e.*, DENSE_RANK() over (order by sal DESC) RN from emp e ) where RN=5
+
+select * from emp emp1 where (5-1) = ( select count(distinct(emp2.sal)) from emp emp2 where emp2.sal > emp1.sal )
+
+-----------------------------------------------------------------------------------------
+
+Write a query to find the number of rows in a table without using COUNT function.
+
+Answer:
+SELECT MAX(rn) FROM
+(
+SELECT ROW_NUMBER() OVER(ORDER BY empno DESC) as rn FROM emp
+)
+
+-----------------------------------------------------------------------------------------
+
+Write a query to display the employee information, who have more than 2 employees under a manager
+Answer: We can achieve this by using the COUNT analytical function. 
+
+select * from ( SELECT e.*, count(mgr) over (partition by mgr) as cnt from emp e ) where cnt >= 2
+
+Query to display all payment instruments with the respective count of the number of times that payment service id has been applied for different orders:
+
+SELECT pii.uuid, pii.paymentserviceid,
+ count(pii.paymentserviceid) over (partition by pii.paymentserviceid) as count from paymentinstrumentinfo pii;
+ 
+-----------------------------------------------------------------------------------------
+ 
+ Select details of all paymentinstruments which have been used more than 40 times :
+ 
+ 
+ select * from 
+( SELECT pii.*, count(paymentserviceid) over (partition by paymentserviceid) as cnt from paymentinstrumentinfo pii )
+where cnt >= 40
+
+-----------------------------------------------------------------------------------------
+
+

@@ -22,11 +22,17 @@ https://howtodoinjava.com/java/multi-threading/throttling-task-submission-rate-u
 Thread Local -https://javarevisited.blogspot.com/2012/05/how-to-use-threadlocal-in-java-benefits.html
 Locks - https://javarevisited.blogspot.com/2014/10/how-to-use-locks-in-multi-threaded-java-program-example.html
 	  - 
-	  
 
-reentrany loack - https://javarevisited.blogspot.com/2015/06/java-lock-and-condition-example-producer-consumer.html
+Performance tuning : 
+https://www.youtube.com/watch?v=YB2xvYCY4B8&list=PL5BFBFE156D50B07E&index=1	  
+
+reentrany lock - https://javarevisited.blogspot.com/2015/06/java-lock-and-condition-example-producer-consumer.html
 Executor service- https://www.baeldung.com/java-executor-service-tutorial
-Videos on Concurrency = https://www.youtube.com/watch?v=7VqWkc9o7RM&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=14
+
+Videos on Concurrency = Defog Tech nice videos
+ https://www.youtube.com/watch?v=7VqWkc9o7RM&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=14
+ https://www.youtube.com/watch?v=WH5UvQJizH0&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
+
 =====================
 Core Java
 ---------------------
@@ -78,7 +84,7 @@ My questions :
 
 1. When do we distinguish how to choose between Strong reference and Soft reference ? 
 2. How is weak reference useful ?
-3. Difference between iterator and enumeration, arraylits / vector, arraylist / copyonwritearraylist, arraylist/ linkedlist..
+3. Difference between iterator and enumeration, arraylists / vector, arraylist / copyonwritearraylist, arraylist/ linkedlist..
 
 https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries/
 https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml
@@ -107,3 +113,5 @@ https://www.sqlshack.com/query-optimization-techniques-in-sql-server-the-basics/
 	
 New year chaos :
 https://www.youtube.com/watch?v=YWYF6bOhPW8	
+
+Huffman coding :

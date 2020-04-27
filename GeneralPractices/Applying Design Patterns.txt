@@ -1,0 +1,22 @@
+Applying Design Patterns (Pg 254, 264):
+
+It is really worth reading books and articles on design patterns. It is sometimes hard to remember the design
+patterns, which you do not use regularly.
+It is always challenging to decide, which design pattern to use when? How do you improve your
+design pattern skills? Practice, practice, practice. I have listed some of the design patterns below with scenarios and
+examples:
+
+To understand design patterns you need to have a basic understanding of object-oriented concepts like:
+Decomposition: The process of dividing a problem into smaller pieces (i.e. divide and conquer approach). The following
+examples will break different scenarios into objects, each with specific responsibilities. A good decomposition will often
+result in improved reusability.
+
+Polymorphism, Inheritance, and Encapsulation:
+
+Loose coupling: The process of making objects independent of each other rather than dependent of one another.
+Loosely coupled objects are easier to reuse and change.
+
+Scenario: A company named XYZ Retail is in the business of selling Books, CDs and Cosmetics. Books are sales tax
+exempt and CDs and Cosmetics have a sales tax of 10%. CDs can be imported and attracts an import tax of 5%. Write a
+shopping basket program, which will calculate extended price (qty * (unitprice + tax)) inclusive of tax for each item in the
+basket, total taxes and grand total.

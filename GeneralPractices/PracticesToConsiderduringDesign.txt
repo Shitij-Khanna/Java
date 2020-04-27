@@ -1,0 +1,58 @@
+Performance issues (network overheads, quality of the code etc): Can I make a single coarse-grained
+network call to my remote object instead of 3 fine-grained calls?
+
+􀂙 Concurrency issues (multi-threading): What if two threads access my object simultaneously will it
+corrupt the state of my object?
+
+􀂙 Transactional issues (ACID properties): What if two clients access the same data simultaneously?
+What if one part of the transaction fails, do we rollback the whole transaction? Do we need a distributed
+(i.e. JTA) transaction? (Refer Q43 in Enterprise section). What if the client resubmits the same
+transactional page again? (Refer Q27 in Enterprise section – How do you prevent multiple submits…).
+
+􀂙 Security issues: Are there any potential security holes for SQL injection (Refer Q46 in Enterprise
+section) or URL injection (Refer Q35 in Enterprise section) by hackers?
+
+􀂙 Memory issues: Is there any potential memory leak problems? Have we allocated enough heap size for
+the JVM? Have we got enough perm space allocated since we are using 3rd party libraries, which
+generate classes dynamically? (e.g. JAXB, XSLT, JasperReports etc) – Refer Q74 in Java section.
+
+􀂙 Scalability issues: Will this application scale vertically and horizontally if the load increases? Should
+this object be serializable? Does this object get stored in the HttpSession
+
+Maintainability, reuse, extensibility etc: How can we make the software reusable, maintainable and
+extensible? What design patterns can we use? How often do we have to refactor our code?
+
+􀂙 Logging and auditing if something goes wrong can we look at the logs to determine the root cause of
+the problem?
+
+􀂙 Object life cycles: Can the objects within the server be created, destroyed, activated or passivated
+depending on the memory usage on the server? (e.g. EJB).
+
+Resource pooling: Creating and destroying valuable resources like database connections, threads etc
+can be expensive. So if a client is not using a resource can it be returned to a pool to be reused when
+other clients connect? What is the optimum pool size?
+
+􀂙 Caching: can we save network trips by storing the data in the server’s memory? How often do we have
+to clear the cache to prevent the in memory data from becoming stale?
+
+􀂙 Load balancing: Can we redirect the users to a server with the lightest load if the other server is
+overloaded?
+
+Transparent fail over: If one server crashes can the clients be routed to another server without any
+interruptions?
+
+􀂙 Clustering: What if the server maintains a state when it crashes? Is this state replicated across the
+other servers?
+
+􀂙 Back-end integration: How do we connect to the databases and/or legacy systems?
+
+Clean shutdown: Can we shut down the server without affecting the clients who are currently using the
+system?
+
+􀂙 Systems management: In the event of a catastrophic system failure who is monitoring the system? Any
+alerts or alarms? Should we use JMX? Should we use any performance monitoring tools like Tivoli?
+􀂙 Dynamic redeployment: How do we perform the software deployment while the site is running? (Mainly
+for mission critical applications 24hrs X 7days).
+
+Portability issues: Can I port this application to a different server 2 years from now?
+
