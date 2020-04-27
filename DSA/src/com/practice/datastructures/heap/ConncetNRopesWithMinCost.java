@@ -3,7 +3,7 @@ package com.practice.datastructures.heap;
 import java.util.PriorityQueue;
 
 /**
- * @author shitijkhanna
+ * @author shitijkhanna 
  *         https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
  *         https://www.youtube.com/watch?v=Z0qmsZefzXA&list=PLt4nG7RVVk1j4vPcIqLqUZLOlOyd8KHw5&index=12
  */

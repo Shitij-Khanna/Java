@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 /**
- * @author shitijkhanna
+ * @author shitijkhanna 
  * // Reference : https://thecodingsimplified.com/find-kth-largest-value-in-given-array/
    // https://www.youtube.com/watch?v=iiYmgrD4h6M&feature=youtu.be
  *
